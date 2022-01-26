@@ -15,13 +15,13 @@ class MyClient(discord.Client):
         if message.author.bot:
           return
       
-          if message.author != message.author.bot:
-            await message.channel.send("Hello From Bot")
+        if message.author != message.author.bot:
+          await message.channel.send("Hello From Bot")
           
-          elif message.content.startswith(command_prefix):
-            await message.channel.send("Enter Command")
-        
-          elif message.content == "ping":
+        if message.content.startswith(command_prefix):
+           await message.channel.send("Enter Command")
+          
+        if message.content == "ping":
             await message.channel.send("PONG!")
 client = MyClient()
 TOKEN = os.environ['TOKEN']
